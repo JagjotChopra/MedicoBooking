@@ -8,9 +8,11 @@ const Header = () => {
     <div class="wrapper">
       <nav class="navbar">
 
-            <div class="logo">  
+            <div class="logo"> 
+            <h2>Medico</h2> 
             <img src="https://cdn-icons-png.freepik.com/512/3999/3999575.png" alt="test" />
-
+                <h2>Booking</h2>
+                
                </div>
 
             <ul class="nav-items">

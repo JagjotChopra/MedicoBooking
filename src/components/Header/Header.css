@@ -16,8 +16,13 @@
 
 .navbar .logo {
     font-size: 24px;
+    display: flex;
     font-weight: bold;
 }
+.logo img{
+    opacity: 0.1;
+}
+
 
 .navbar .nav-items {
     display: flex;
