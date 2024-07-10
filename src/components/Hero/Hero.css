@@ -1,0 +1,50 @@
+
+.hero-banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EDEDED
+    ;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.text-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-section h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.text-section p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.text-section .appointment-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.image-section {
+    flex: 1;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+

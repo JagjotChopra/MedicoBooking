@@ -1,0 +1,74 @@
+
+/* Home.css */
+
+
+
+.find-doctor {
+    padding: 20px;
+    text-align: center;
+}
+
+.heading-doc{
+    font-size: 34px;
+}
+
+.search-box {
+    width: 50%;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.doctors-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
+}
+
+.doctor-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.doctor-card img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.doctor-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.doctor-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.doctor-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.doctor-card button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/*----------------------*/
+
