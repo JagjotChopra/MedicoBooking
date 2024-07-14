@@ -1,0 +1,30 @@
+/* UserListPage.css */
+
+.user-list-page {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-list {
+    margin-top: 20px;
+  }
+  
+  .user-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-list ul li {
+    margin-bottom: 10px;
+  }
+  
