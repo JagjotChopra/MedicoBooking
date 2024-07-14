@@ -7,8 +7,6 @@ import Contact from '../../components/Contact/Contact';
 const Home = () => {
   return (
     <div>
-
-
       <Hero />
       <Services />
       <section class="find-doctor">
