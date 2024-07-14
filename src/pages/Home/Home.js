@@ -3,6 +3,10 @@ import './Home.css';
 import Hero from '../../components/Hero/Hero';
 import Services from '../../components/Services/Services';
 import Contact from '../../components/Contact/Contact';
+import Login from '../Login/Login';
+import AdminDashboard from '../../components/AdminDashboard/AdminDashboard';
+import AddDoctor from '../../components/AdminDashboard/AddDoctor';
+import SeeList from '../../components/AdminDashboard/SeeList';
 
 const Home = () => {
   return (
@@ -48,9 +52,10 @@ const Home = () => {
       </section>
 
       <Contact />
-
-
-
+      <Login />
+      <AdminDashboard />
+      <AddDoctor />
+      <SeeList />
     </div>
   );
 }
