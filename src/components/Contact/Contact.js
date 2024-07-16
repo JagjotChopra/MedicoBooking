@@ -5,7 +5,9 @@ const Contact = () => {
   return (
     <div class="container-contact">
     <h2>Contact Us</h2>
-    <form>
+    <hr className='divider'/>
+   
+    <form className='contact-form'>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
@@ -14,8 +16,10 @@ const Contact = () => {
 
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" required/>
-
+        <div className='btn-wrapper'>
         <button type="submit">Submit</button>
+    
+        </div>
     </form>
 </div>
   );

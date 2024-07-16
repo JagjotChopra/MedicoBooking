@@ -1,5 +1,6 @@
 import React from 'react'
 import './Login.css'
+import img from '../../assets/Images/ai-generated-8881542_1280.jpg';
 const Login = () => {
 
   return (
@@ -24,6 +25,9 @@ const Login = () => {
         <button type="submit" className="btn">Login</button>
       </form>
     </div>
+
+
+    
   );
 }
 

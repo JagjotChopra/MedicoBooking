@@ -1,9 +1,11 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 
 
 const Header = () => {
+  // value we will get from redux
+  let [user,setUser]=useState('guestUser')
   return (
     <div class="wrapper">
       <nav class="navbar">
@@ -16,12 +18,31 @@ const Header = () => {
                </div>
 
             <ul class="nav-items">
-                <li>Home</li>
+                
+
+                {
+
+              (  user=="user"||user=="guestUser")?<>
+                  <li>Home</li>
                 <li>Services</li>
                 <li>Find A Doctor</li>
                 <li>Contact</li>
+                  </>:null
+                }
+{
+                  user=="admin"?<>
+                  <li>Dashboard</li>
+                <li>Add Doctor</li>
+                <li>See User List</li>
+                  </>:null
+                }
+
             </ul>
-            <button class="login-btn">Login</button>
+
+           {
+           (  user=="user"||user=="admin")?<button class="login-btn">Logout</button>:
+           <button class="login-btn">Login</button>
+           } 
         </nav>
 
       
