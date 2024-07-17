@@ -1,31 +1,41 @@
-
 .services-section {
-    height: 90vh;
+    padding-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: #f8f9fa;
 }
 
 .services-section .text-content {
-    width: 40%;
+    width: 100%;
     text-align: center;
+    font-family: 'Lato', sans-serif;
     margin-bottom: 40px;
 }
 
 .services-section .text-content h2 {
-    font-size: 32px;
+    font-size: 52px;
     margin-bottom: 20px;
+    color: black;
 }
 
 .services-section .text-content p {
     font-size: 18px;
     line-height: 1.5;
+    margin-bottom: 0px;
 }
 
+.divider {
+    width: 20%;
+    height: 4px;
+    background-color: #0d75f8;
+    margin: 0px auto;
+}
+
+
 .service-cards {
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -35,34 +45,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 30%;
-    padding: 20px; */
+    width: 30%;
+    padding: 20px; 
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     border-radius: 8px;
+    margin-bottom: 20vh;
+    border-left: 3px solid #0d75f8;
+    border-bottom: 3px solid #0d75f8;
 }
 
-.service-card img {
-    width: 80px;
-    height: 80px;
+.service-card i {
+    font-size: 62px;
+    color:black;
     margin-bottom: 20px;
 }
 
 .service-card .service-info h3 {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 10px;
+    font-family: 'Lato';
 }
 
 .service-card .service-info p {
     font-size: 16px;
     margin-bottom: 20px;
+    font-family: 'Lato';
 }
 
 .icon-btn {
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: #0d75f8;
     color: white;
     cursor: pointer;
     border-radius: 4px;

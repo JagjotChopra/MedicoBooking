@@ -34,8 +34,10 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
+
+      
       <form onSubmit={handleSubmit}>
+      <h2>Sign Up</h2>
         <div>
           <label>Username</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} required />
@@ -54,4 +56,6 @@ const Signup = () => {
   );
 };
 
+
 export default Signup;
+
