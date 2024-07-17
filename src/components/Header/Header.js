@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -9,23 +10,23 @@ const Header = () => {
   return (
     <div class="wrapper">
       <nav class="navbar">
-
+              <Link to="/">
             <div class="logo"> 
             <h2>Medico</h2> 
             <img src="https://cdn-icons-png.freepik.com/512/3999/3999575.png" alt="test" />
                 <h2>Booking</h2>
                 
                </div>
-
+               </Link>
             <ul class="nav-items">
                 
 
                 {
 
               (  user=="user"||user=="guestUser")?<>
-                  <li>Home</li>
+                 <li><Link to="/"> Home </Link></li> 
                 <li>Services</li>
-                <li>Find A Doctor</li>
+                <li><Link to="/findDoctor">Find A Doctor</Link></li>
                 <li>Contact</li>
                   </>:null
                 }
@@ -41,7 +42,7 @@ const Header = () => {
 
            {
            (  user=="user"||user=="admin")?<button class="login-btn">Logout</button>:
-           <button class="login-btn">Login</button>
+           <Link to="/login"> <button class="login-btn">Login</button></Link>
            } 
         </nav>
 
