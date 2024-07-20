@@ -34,6 +34,7 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
+
       
       <form onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
@@ -55,4 +56,6 @@ const Signup = () => {
   );
 };
 
+
 export default Signup;
+
