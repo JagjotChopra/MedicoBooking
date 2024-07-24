@@ -1,0 +1,29 @@
+[
+    {
+        "id":15,
+        "name":"DR BINDRA",
+        "email":"email@email.com",
+        "Speciality":"CHILD",
+         "photo":"url",
+         "description": "desc",
+         "password":"password"
+    },
+    {
+        "id":25,
+        "name":"DR RAMAN",
+        "email":"email@email.com",
+        "Speciality":"ADULT",
+         "photo":"url",
+         "description": "desc",
+         "password":"password"
+    },
+    {
+        "id":35,
+        "name":"DR AMBAKAR",
+        "email":"email@email.com",
+        "Speciality":"OLD",
+         "photo":"url",
+         "description": "desc",
+         "password":"password"
+    }
+]
