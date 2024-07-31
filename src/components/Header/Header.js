@@ -1,12 +1,27 @@
 
 import React, { useState } from 'react'
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
   // value we will get from redux
-  let [user,setUser]=useState('guestUser')
+  const naviagte=useNavigate();
+  let user;
+  if(localStorage.getItem('user')){
+      user=localStorage.getItem('user');
+  }
+  else{
+    user="guestUser";
+  }
+
+  function logout(){
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    naviagte('/');
+  }
+  
+
   return (
     <div class="wrapper">
       <nav class="navbar">
@@ -41,8 +56,19 @@ const Header = () => {
             </ul>
 
            {
-           (  user=="user"||user=="admin")?<button class="login-btn">Logout</button>:
-           <Link to="/login"> <button class="login-btn">Login</button></Link>
+           (  user=="user"||user=="admin")?<button class="login-btn" onClick={logout}>Logout</button>:
+           <>
+             <div class="dropdown">
+        <button class="dropdown-button">Login</button>
+        <div class="dropdown-content">
+            <Link to="/userLogin">User</Link>
+            <Link to="/adminLogin">Admin</Link>
+            <Link to="/doctorLogin">Doctor</Link>
+        </div>
+    </div>
+           </>
+          //  <Link to="/login"> <button class="login-btn">Login</button></Link>
+           
            } 
         </nav>
 

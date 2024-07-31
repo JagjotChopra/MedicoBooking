@@ -1,0 +1,23 @@
+.doctor-detail {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .doctor-detail img {
+    padding: 25px;
+    width: 400px;
+    margin-top: 15vh;
+  }
+  
+  .doctor-detail h1 {
+    margin-top: 50px;
+  }
+  
+  .doctor-detail p {
+    margin-top: 10px;
+    padding:0px 25px;
+  }
+  

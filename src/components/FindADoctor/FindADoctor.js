@@ -1,50 +1,58 @@
-import React from 'react'
-import './FindADoctor.css'
-import doc1 from '../../assets/Images/doctors/ai-generated-8451270_640.png'
-import doc2 from '../../assets/Images/doctors/ai-generated-8578391_640.png'
-import doc3 from '../../assets/Images/doctors/nurse-2019420_640.jpg'
-import doc4 from '../../assets/Images/doctors/pexels-thirdman-5327585 (1).jpg'
+import React, { useEffect, useState } from 'react';
+import './FindADoctor.css';
+import { useNavigate } from 'react-router-dom';
+
 const FindADoctor = () => {
+  const [doctors, setDoctors] = useState([]);
+
+  const navigate= useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  useEffect(() => {
+    fetch('/api/v1/doctors')
+      .then(response => response.json())
+      .then(data => setDoctors(data.data))
+      .catch(error => console.error('Error fetching doctors:', error));
+  }, []);
+
+  const fetchDoctors = (name = '') => {
+    fetch(`/api/v1/doctors?name=${name}`)
+      .then(response => response.json())
+      .then(data => setDoctors(data.data))
+      .catch(error => console.error('Error fetching doctors:', error));
+  };
+
+  const handleSearchChange = (event) => {
+    const { value } = event.target;
+    setSearchTerm(value);
+    fetchDoctors(value);
+  };
+
+  const handleSeeInfoClick = (doctorId) => {
+    navigate(`/doctor/id/${doctorId}`);
+  };
+
   return (
-    <section class="find-doctor">
-    <h1 className='heading-doc'>Find a Doctor</h1>
-    <hr className='divider'/>
-    <div className="search-box">
-    <input type="text"  placeholder="Search for a doctor..." />
-    </div>
-   
-    <div class="doctors-row">
-      <div class="doctor-card">
-        <img src={doc1} alt="Doctor Image" />
-        <h2>Dr. Jane Doe</h2>
-        <p>Specialist in Cardiology</p>
-        <p>Over 10 years of experience</p>
-        <button>See Full Info</button>
+    <section className="find-doctor">
+      <h1 className="heading-doc">Find a Doctor</h1>
+      <hr className="divider" />
+      <div className="search-box">
+        <input type="text" value={searchTerm}
+          onChange={handleSearchChange}  placeholder="Search for a doctor..." />
       </div>
-      <div class="doctor-card">
-        <img src={doc2} alt="Doctor Image" />
-        <h2>Dr. John Smith</h2>
-        <p>Specialist in Neurology</p>
-        <p>Over 15 years of experience</p>
-        <button>See Full Info</button>
+
+      <div className="doctors-row">
+        {
+        doctors.map((doctor, index) => (
+          <div className="doctor-card" key={index}>
+            <img src={doctor.photo} alt={`Doctor ${doctor.name}`} />
+            <h2>{doctor.name}</h2>
+            <p>{doctor.speciality}</p>
+            <button onClick={() => handleSeeInfoClick(doctor._id)}>See Full Info</button>
+          </div>
+        ))}
       </div>
-      <div class="doctor-card">
-        <img src={doc3} alt="Doctor Image" />
-        <h2>Dr. Alice Brown</h2>
-        <p>Specialist in Pediatrics</p>
-        <p>Over 8 years of experience</p>
-        <button>See Full Info</button>
-      </div>
-      <div class="doctor-card">
-        <img src={doc4} alt="Doctor Image" />
-        <h2>Dr. Michael Johnson</h2>
-        <p>Specialist in Dermatology</p>
-        <p>Over 12 years of experience</p>
-        <button>See Full Info</button>
-      </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 }
 
-export default FindADoctor
+export default FindADoctor;
