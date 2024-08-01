@@ -16,6 +16,8 @@ import DoctorLogin from './pages/Login/DoctorLogin/DoctorLogin';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import { verifyLocalStorage } from './auth';
 import DoctorDetail from './pages/DoctorDetail/DoctorDetail';
+import UserDashboard from './pages/UserDashboard/userDashboard';
+import BookingAppointment from './pages/Appointment/BookingAppointment';
 
 function App() {
   
@@ -32,6 +34,11 @@ function App() {
         <Route path="/doctor/id/:id" element={<DoctorDetail />} />
         <Route element={<ProtectedRoute isAuthenticated={verifyLocalStorage} role="admin" />}>
            <Route path="/adminDashboard" element={<AdminDashboard/>} />
+        </Route>
+
+        <Route element={<ProtectedRoute isAuthenticated={verifyLocalStorage} role="user" />}>
+           <Route path="/userDashboard" element={<UserDashboard/>} />
+           <Route path="/bookingAppointment" element={<BookingAppointment/>} />
         </Route>
 
         

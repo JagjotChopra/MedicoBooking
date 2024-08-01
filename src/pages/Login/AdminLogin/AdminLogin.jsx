@@ -14,7 +14,7 @@ const AdminLogin = () => {
  
   return (
     <div>
-      <Login userType="Admin" />
+      <Login userType="Admin" endpoints="/admin" />
     </div>
   )
 }

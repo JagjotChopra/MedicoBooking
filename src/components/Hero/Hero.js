@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
 import bannerImg from '../../assets/Images/ai-generated-8881542_1280.jpg';
+import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     //     <div class="hero-banner">
@@ -22,7 +23,7 @@ const Hero = () => {
       <div className="banner-content">
         <h1 className='banner-text'>We help patients live a healthy, longer life.</h1>
         <p className='banner-text-2'>Our mission is to provide top-notch healthcare services to ensure the well-being of our patients.</p>
-        <button id="banner-button" class="appointment-btn">Request an Appointment</button>
+        <Link to="/findDoctor"><button id="banner-button" class="appointment-btn">Request an Appointment</button></Link>
       </div>
     </div>
   )

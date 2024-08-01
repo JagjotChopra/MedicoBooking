@@ -18,6 +18,9 @@ const Header = () => {
   function logout(){
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    localStorage.removeItem('userData');
+    localStorage.removeItem('doctorName');
+    localStorage.removeItem('doctorId');
     naviagte('/');
   }
   
@@ -38,13 +41,23 @@ const Header = () => {
 
                 {
 
-              (  user=="user"||user=="guestUser")?<>
+              (  user=="guestUser")?<>
                  <li><Link to="/"> Home </Link></li> 
                 <li>Services</li>
                 <li><Link to="/findDoctor">Find A Doctor</Link></li>
                 <li>Contact</li>
                   </>:null
                 }
+
+{
+
+user=="user"?<>
+ <li><Link to="/"> Home </Link></li> 
+ <li>Dashboard</li>
+  <li><Link to="/userAppointment">Appointment</Link></li>
+    </>:null
+  }
+
 {
                   user=="admin"?<>
                   <li>Dashboard</li>

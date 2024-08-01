@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './DoctorDetail.css';
+import { verifyLocalStorage } from '../../auth';
 
 const DoctorDetail = () => {
   const { id } = useParams();
   const [doctor, setDoctor] = useState();
+  const navigate= useNavigate();
   let baseUrl="http://localhost:9000/";
 
   useEffect(() => {
@@ -18,6 +20,19 @@ const DoctorDetail = () => {
     return <div>Loading...</div>;
   }
 
+  function check(){
+    if(verifyLocalStorage()){
+      alert("User is Autheticated");
+      localStorage.setItem('doctorName',doctor.name)
+      localStorage.setItem('doctorId',id)
+      navigate('/bookingAppointment');
+    }
+    else{
+      alert("Please Login");
+      navigate('/userLogin');
+    }
+  }
+
   return (
     <div className="doctor-detail">
       <img src={`${baseUrl}${doctor.photo}`} alt={`Doctor ${doctor.name}`} />
@@ -26,6 +41,7 @@ const DoctorDetail = () => {
       <p>Speciality: {doctor.speciality}</p>
       <p>Email: {doctor.email}</p>
       <p>About: {doctor.description}</p>
+      <button id="banner-button" onClick={check} class="appointment-btn">Request an Appointment</button>
       </div>
       {/* Add more fields as necessary */}
     </div>

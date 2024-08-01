@@ -7,10 +7,11 @@ const ProtectedRoute = ({isAuthenticated,role}) => {
         let path=''
         if(role=="admin"){
             path="/adminLogin"
-        }else if(role=="doctor"){
+        }
+         if(role=="doctor"){
             path="/doctorLogin"
         }
-        else{
+        if(role=="user"){
             path="/userLogin"
         }
 

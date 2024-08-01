@@ -6,12 +6,12 @@ const Login = (props) => {
   let [email, setEmail] = useState();
   let [password, setPassword] = useState();
   const navigate = useNavigate();
-
+  let endpoints=props.endpoints;
 
   function login(e) {
     e.preventDefault();
   
-    fetch('/api/v1/admin', {
+    fetch('/api/v1'+endpoints, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Specify content type as JSON
@@ -29,7 +29,18 @@ const Login = (props) => {
       if(data.status=="success"){
         localStorage.setItem('user',data.role);
         localStorage.setItem('token',data.token);
-        navigate('/adminDashboard');
+        if(data.role=="admin"){
+          navigate('/adminDashboard');
+        }
+         if(data.role=="user"){
+          console.log(JSON.stringify(data.userData));
+          localStorage.setItem('userData',JSON.stringify(data.userData));
+          navigate('/userDashboard');
+        }
+        if(data.role=="doctor"){
+          navigate('/doctorDashboard');
+        }
+        
       }
     })
     .catch((err) => {

@@ -1,0 +1,57 @@
+.app-container{
+    height: 95vh;
+    align-content: center;
+}
+.BookingAppointment {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .BookingAppointment h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .BookingAppointment form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .BookingAppointment form div {
+    margin-bottom: 15px;
+  }
+  
+  .BookingAppointment label {
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: bold;
+  }
+  
+  .BookingAppointment input[type="text"],
+  .BookingAppointment input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .BookingAppointment button[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .BookingAppointment button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  

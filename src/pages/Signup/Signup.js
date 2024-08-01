@@ -3,7 +3,7 @@ import './Signup.css'; // Import the CSS file
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    userName: '',
     email: '',
     password: '',
   });
@@ -18,7 +18,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://your-backend-api/signup', {
+      const response = await fetch('/api/v1/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,6 +26,7 @@ const Signup = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+      
       console.log(data);
     } catch (error) {
       console.error('Error:', error);
@@ -40,7 +41,7 @@ const Signup = () => {
       <h2>Sign Up</h2>
         <div>
           <label>Username</label>
-          <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+          <input type="text" name="userName" value={formData.userName} onChange={handleChange} required />
         </div>
         <div>
           <label>Email</label>
